@@ -1,10 +1,17 @@
-function CoreConcepts({ image, title, description }) {
+import { CORE_CONCEPTS } from '../data';
+import Section from '../UI/Section';
+import CoreConcept from './CoreConcept';
+
+function CoreConcepts() {
   return (
-    <li>
-      <img src={image} alt={title} />
-      <h3>{title}</h3>
-      <p>{description}</p>
-    </li>
+    <Section id='core-concepts'>
+      <h2>Core Concept</h2>
+      <ul>
+        {CORE_CONCEPTS.map((item) => (
+          <CoreConcept key={item.title} {...item} />
+        ))}
+      </ul>
+    </Section>
   );
 }
 
